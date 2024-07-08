@@ -21,7 +21,8 @@ jobs:
       - name: List files
         run: dir dist
       - name: Create installation script
-        run: echo """
+        run: > 
+             echo """
              @echo off
              set "smp=%appdata%\microsoft\windows\start menu\programs"
              cd %~dp0
