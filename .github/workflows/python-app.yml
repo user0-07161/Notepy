@@ -15,7 +15,7 @@ jobs:
         with:
             python-version: '3.10' 
       - name: Install dependencies
-        run: python.exe -m pip install --upgrade pip PyInstaller PySide6 && python.exe -m pip install -r requirements.txt
+        run: python.exe -m pip install --upgrade pip PyInstaller PySide6 && python.exe -m pip install -r src\requirements.txt
       - name: Build package
         run: python.exe -m PyInstaller --icon .\src\fileicon.ico .\src\notepy.pyw --onefile
       - name: List files
