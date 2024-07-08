@@ -14,7 +14,7 @@ jobs:
         with:
             python-version: '3.10' 
       - name: Install PyInstaller
-        run: dir src && dir && python.exe -m pip install --upgrade pip PyInstaller PySide6
+        run: dir && python.exe -m pip install --upgrade pip PyInstaller PySide6
       - name: Build package
         run: python.exe -m PyInstaller --icon .\src\fileicon.ico .\src\notepy.pyw
       - name: List files
