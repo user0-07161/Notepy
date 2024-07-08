@@ -13,14 +13,13 @@ jobs:
   pyinstaller-build:
     runs-on: windows-latest
     steps:
-      - name: Create Executable
-        uses: sayyid5416/pyinstaller@v1
+      - uses: actions/setup-python@v5
         with:
-          python_ver: '3.6'
-          spec: 'src/notepy.pyw'
-          requirements: 'src/requirements.txt'
-          upload_exe_with_name: 'NotePy'
-          options: --onefile, --name "NotePy"
+            python-version: '3.10' 
+      - name: Install PyInstaller
+        run: pip install --upgrade pip PyInstaller PySide6 python-magic-bin requests python-dateutil psutil
+      - name: Build package
+        run: python PyInstaller --icon .\src\fileicon.ico .\src\notepy.pyw
       - name: List files
-        run: ls
+        run: dir dist
       
